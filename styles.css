@@ -391,6 +391,10 @@ h3 {
   color: #3d4b5e;
 }
 
+.journal-name {
+  font-style: italic;
+}
+
 .paper-links {
   display: flex;
   align-items: start;

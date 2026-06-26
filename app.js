@@ -30,14 +30,18 @@ const papers = [
   {
     kind: "published",
     title: "Personalization and Privacy Choice",
-    details: "With Andrew Rhodes. 2025. Forthcoming in RAND Journal of Economics.",
+    detailPrefix: "With Andrew Rhodes. 2025. Forthcoming in ",
+    journal: "RAND Journal of Economics",
+    detailSuffix: ".",
     url: "https://drive.google.com/file/d/1N25R9BBVPVrlsZ5hvLfQD-2x4rpscJcG/view?usp=sharing",
     links: [{ label: "Slides", url: "https://drive.google.com/file/d/1WcKlWnXCt9BVlm2EDoO9Ds57n-06ANxK/view?usp=sharing" }],
   },
   {
     kind: "published",
     title: "Personalized Pricing and Competition",
-    details: "With Andrew Rhodes. American Economic Review, 2024, 114(7), 2141-2170.",
+    detailPrefix: "With Andrew Rhodes. ",
+    journal: "American Economic Review",
+    detailSuffix: ", 2024, 114(7), 2141-2170.",
     url: "https://drive.google.com/file/d/1ZuFuQdSdoqyYegQ3Cf-k2M0_GKQpboYR/view?usp=sharing",
     links: [
       { label: "Slides", url: "https://drive.google.com/file/d/11g416h5Tn3MV0IQZK4fVGJpQaQqKUSHU/view?usp=sharing" },
@@ -48,34 +52,44 @@ const papers = [
   {
     kind: "published",
     title: "A Model of Sequential Crisis Management",
-    details: "With Fei Li. American Economic Journal: Microeconomics, 2023, 15(4), 319-349.",
+    detailPrefix: "With Fei Li. ",
+    journal: "American Economic Journal: Microeconomics",
+    detailSuffix: ", 2023, 15(4), 319-349.",
     url: "https://drive.google.com/file/d/1eylRoW8-fPLMg9c6VS0-n5zOVfsaC8NV/view?usp=share_link",
     links: [{ label: "Working paper", url: "https://drive.google.com/file/d/1Ys0eAADWP9YctwZG9NAHMJ253K_sHBhG/view?usp=share_link" }],
   },
   {
     kind: "published",
     title: "Open Banking: Credit Market Competition When Borrowers Own the Data",
-    details: "With Zhiguo He and Jing Huang. Journal of Financial Economics, 2023, 147(2), 449-474. European Financial Association 2021 Best Conference Paper Prize.",
+    detailPrefix: "With Zhiguo He and Jing Huang. ",
+    journal: "Journal of Financial Economics",
+    detailSuffix: ", 2023, 147(2), 449-474. European Financial Association 2021 Best Conference Paper Prize.",
     url: "https://drive.google.com/file/d/1oY6DXDZKP-7Vo2EmLvVJ6J66IX_3ZaHj/view?usp=sharing",
     links: [{ label: "Slides", url: "https://drive.google.com/file/d/1LCNujeRXGXqrx3LR6Pa0EvWdAvUk-NOT/view?usp=sharing" }],
   },
   {
     kind: "published",
     title: "Consumer Information and the Limits to Competition",
-    details: "With Mark Armstrong. American Economic Review, 2022, 112(2), 534-577.",
+    detailPrefix: "With Mark Armstrong. ",
+    journal: "American Economic Review",
+    detailSuffix: ", 2022, 112(2), 534-577.",
     url: "https://drive.google.com/file/d/1jcaqNL9YwDIzULGYW-6k_nbs3v4CRitX/view?usp=sharing",
     links: [{ label: "Slides", url: "https://drive.google.com/file/d/1h5Z9U3_smeZn_TU3u5QDinlJJrfdDyCn/view?usp=sharing" }],
   },
   {
     kind: "published",
     title: "Mixed Bundling in Oligopoly Markets",
-    details: "Journal of Economic Theory, 2021, 194, 105257.",
+    detailPrefix: "",
+    journal: "Journal of Economic Theory",
+    detailSuffix: ", 2021, 194, 105257.",
     url: "https://www.sciencedirect.com/science/article/abs/pii/S0022053121000740",
   },
   {
     kind: "published",
     title: "Multiproduct Intermediaries",
-    details: "With Andrew Rhodes and Makoto Watanabe. Journal of Political Economy, 2021, 129(2), 421-464.",
+    detailPrefix: "With Andrew Rhodes and Makoto Watanabe. ",
+    journal: "Journal of Political Economy",
+    detailSuffix: ", 2021, 129(2), 421-464.",
     url: "https://www.journals.uchicago.edu/doi/abs/10.1086/711917",
     links: [
       { label: "Supplement", url: "https://drive.google.com/open?id=1JsCXqgkwcvf79VA21TV2f7vt7_WZwTwt" },
@@ -85,25 +99,33 @@ const papers = [
   {
     kind: "published",
     title: "Consumer Search and Retail Market Structure",
-    details: "With Andrew Rhodes. Management Science, 2019, 65(6), 2607-2623.",
+    detailPrefix: "With Andrew Rhodes. ",
+    journal: "Management Science",
+    detailSuffix: ", 2019, 65(6), 2607-2623.",
     url: "https://pubsonline.informs.org/doi/10.1287/mnsc.2018.3058",
   },
   {
     kind: "published",
     title: "Search and Categorization",
-    details: "With Chaim Fershtman and Arthur Fishman. International Journal of Industrial Organization, 2018, 57, 225-254.",
+    detailPrefix: "With Chaim Fershtman and Arthur Fishman. ",
+    journal: "International Journal of Industrial Organization",
+    detailSuffix: ", 2018, 57, 225-254.",
     url: "https://www.sciencedirect.com/science/article/pii/S0167718717304423",
   },
   {
     kind: "published",
     title: "A Note on Foreign Direct Investment and Exports in Vertically Differentiated Industries",
-    details: "With Jie Ma. Bulletin of Economic Research, 2017, 69(2), 138-146.",
+    detailPrefix: "With Jie Ma. ",
+    journal: "Bulletin of Economic Research",
+    detailSuffix: ", 2017, 69(2), 138-146.",
     url: "https://onlinelibrary.wiley.com/doi/pdf/10.1111/boer.12087",
   },
   {
     kind: "published",
     title: "Competitive Bundling",
-    details: "Econometrica, 2017, 85(1), 145-172.",
+    detailPrefix: "",
+    journal: "Econometrica",
+    detailSuffix: ", 2017, 85(1), 145-172.",
     url: "https://www.jstor.org/stable/44155419?seq=1#metadata_info_tab_contents",
     links: [
       { label: "Working paper", url: "https://drive.google.com/open?id=1hCi0EUXSywEoya8PZB_zWHaCokxu0ro5" },
@@ -113,52 +135,68 @@ const papers = [
   {
     kind: "published",
     title: "Search Deterrence",
-    details: "With Mark Armstrong. Review of Economic Studies, 2016, 83(1), 26-57.",
+    detailPrefix: "With Mark Armstrong. ",
+    journal: "Review of Economic Studies",
+    detailSuffix: ", 2016, 83(1), 26-57.",
     url: "https://www.jstor.org/stable/43868456?seq=1#metadata_info_tab_contents",
     links: [{ label: "Appendix", url: "https://drive.google.com/file/d/1NqSYvPQOOK0oHnPYnctu7dqMUhYSuGwQ/view?usp=sharing" }],
   },
   {
     kind: "published",
     title: "Multiproduct Search and the Joint Search Effect",
-    details: "American Economic Review, 2014, 104(9), 2918-2939. Distinguished CESifo Affiliate Award in Applied Microeconomics.",
+    detailPrefix: "",
+    journal: "American Economic Review",
+    detailSuffix: ", 2014, 104(9), 2918-2939. Distinguished CESifo Affiliate Award in Applied Microeconomics.",
     url: "https://www.jstor.org/stable/43495338?seq=1#metadata_info_tab_contents",
     links: [{ label: "Working paper", url: "https://drive.google.com/open?id=1YNCRXWJu9gbHGjdsTUALrKPMVGS-Pzlq" }],
   },
   {
     kind: "published",
     title: "Price Competition with Consumer Confusion",
-    details: "With Ioana Chioveanu. Management Science, 2013, 59(11), 2450-2469.",
+    detailPrefix: "With Ioana Chioveanu. ",
+    journal: "Management Science",
+    detailSuffix: ", 2013, 59(11), 2450-2469.",
     url: "https://pubsonline.informs.org/doi/abs/10.1287/mnsc.2013.1716",
     links: [{ label: "Supplement", url: "https://drive.google.com/file/d/1LRvjbCSaABpmoc4CCS3kpJFXCxUjoEex/view?usp=sharing" }],
   },
   {
     kind: "published",
     title: "Paying for Prominence",
-    details: "With Mark Armstrong. Economic Journal, 2011, 121(556), F368-F395.",
+    detailPrefix: "With Mark Armstrong. ",
+    journal: "Economic Journal",
+    detailSuffix: ", 2011, 121(556), F368-F395.",
     url: "https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1468-0297.2011.02469.x",
   },
   {
     kind: "published",
     title: "Reference Dependence and Market Competition",
-    details: "Journal of Economics & Management Strategy, 2011, 20(4), 1073-1097.",
+    detailPrefix: "",
+    journal: "Journal of Economics & Management Strategy",
+    detailSuffix: ", 2011, 20(4), 1073-1097.",
     url: "https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1530-9134.2011.00309.x",
   },
   {
     kind: "published",
     title: "Ordered Search in Differentiated Markets",
-    details: "International Journal of Industrial Organization, 2011, 29(2), 253-262.",
+    detailPrefix: "",
+    journal: "International Journal of Industrial Organization",
+    detailSuffix: ", 2011, 29(2), 253-262.",
     url: "https://www.sciencedirect.com/science/article/pii/S0167718710000962",
   },
   {
     kind: "published",
     title: "Prominence and Consumer Search",
-    details: "With Mark Armstrong and John Vickers. RAND Journal of Economics, 2009, 40(2), 209-233.",
+    detailPrefix: "With Mark Armstrong and John Vickers. ",
+    journal: "RAND Journal of Economics",
+    detailSuffix: ", 2009, 40(2), 209-233.",
     url: "https://www.jstor.org/stable/25593705?seq=1#metadata_info_tab_contents",
   },
   {
     kind: "published",
     title: "Consumer Protection and the Incentive to Become Informed",
-    details: "With Mark Armstrong and John Vickers. Journal of European Economic Association, 2009, 7(2-3), 399-410.",
+    detailPrefix: "With Mark Armstrong and John Vickers. ",
+    journal: "Journal of European Economic Association",
+    detailSuffix: ", 2009, 7(2-3), 399-410.",
     url: "http://onlinelibrary.wiley.com/doi/10.1162/JEEA.2009.7.2-3.399/abstract",
   },
   {
@@ -299,7 +337,15 @@ function renderPapers(filter = "all") {
 
       const details = document.createElement("p");
       details.className = "paper-details";
-      details.textContent = paper.details;
+      if (paper.journal) {
+        details.append(document.createTextNode(paper.detailPrefix || ""));
+        const journal = document.createElement("em");
+        journal.className = "journal-name";
+        journal.textContent = paper.journal;
+        details.append(journal, document.createTextNode(paper.detailSuffix || ""));
+      } else {
+        details.textContent = paper.details;
+      }
 
       body.append(meta, title, details);
 
