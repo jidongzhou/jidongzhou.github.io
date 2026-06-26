@@ -224,19 +224,19 @@ const papers = [
     url: "https://drive.google.com/open?id=1v3rUdjjM9-bj94EVhstN9MPwa9caaHmm",
   },
   {
-    kind: "working",
+    kind: "dormant",
     title: "Consumer Behavioural Biases in Competition: A Survey",
     details: "With Steffen Huck. 2011. Dormant working paper.",
     url: "https://drive.google.com/open?id=1PYIxYrffNZecSaiFOnZl2ybjhOWLQKGO",
   },
   {
-    kind: "working",
+    kind: "dormant",
     title: "Prominence in Search Markets: Competitive Pricing and Central Pricing",
     details: "2009. Dormant working paper.",
     url: "https://drive.google.com/open?id=1anmT2zeJWlcaI2Aq1dywGh3Cj4cScsni",
   },
   {
-    kind: "working",
+    kind: "dormant",
     title: "Advertising, Misperceived Preferences, and Product Design",
     details: "2008. Dormant working paper.",
     url: "https://drive.google.com/open?id=1FS3m_I61h-M9PvprISdW7OymYK8l7b7S",
@@ -311,64 +311,70 @@ function renderInsights() {
   );
 }
 
+function createPaperCard(paper) {
+  const card = document.createElement("article");
+  card.className = "paper-card";
+  card.dataset.kind = paper.kind;
+
+  const body = document.createElement("div");
+
+  const title = document.createElement("h3");
+  title.className = "paper-title";
+  const titleLink = document.createElement("a");
+  titleLink.href = paper.url;
+  titleLink.textContent = paper.title;
+  applyExternalAttrs(titleLink);
+  title.append(titleLink);
+
+  const details = document.createElement("p");
+  details.className = "paper-details";
+  if (paper.journal) {
+    details.append(document.createTextNode(paper.detailPrefix || ""));
+    const journal = document.createElement("em");
+    journal.className = "journal-name";
+    journal.textContent = paper.journal;
+    details.append(journal, document.createTextNode(paper.detailSuffix || ""));
+  } else {
+    details.textContent = paper.details;
+  }
+
+  body.append(title, details);
+
+  const links = document.createElement("div");
+  links.className = "paper-links";
+  const primary = document.createElement("a");
+  primary.href = paper.url;
+  primary.textContent = "Paper";
+  applyExternalAttrs(primary);
+  links.append(primary);
+
+  (paper.links || []).forEach((link) => {
+    const anchor = document.createElement("a");
+    anchor.href = link.url;
+    anchor.textContent = link.label;
+    applyExternalAttrs(anchor);
+    links.append(anchor);
+  });
+
+  card.append(body, links);
+  return card;
+}
+
 function renderPapers(filter = "all") {
+  const publicationsList = document.querySelector("#publications-list");
+  const workingPapersList = document.querySelector("#working-papers-list");
+  const dormantPapersList = document.querySelector("#dormant-papers-list");
+  if (publicationsList && workingPapersList && dormantPapersList) {
+    publicationsList.replaceChildren(...papers.filter((paper) => paper.kind === "published").map(createPaperCard));
+    workingPapersList.replaceChildren(...papers.filter((paper) => paper.kind === "working").map(createPaperCard));
+    dormantPapersList.replaceChildren(...papers.filter((paper) => paper.kind === "dormant").map(createPaperCard));
+    return;
+  }
+
   const list = document.querySelector("#research-list");
   if (!list) return;
   const visible = filter === "all" ? papers : papers.filter((paper) => paper.kind === filter);
-
-  list.replaceChildren(
-    ...visible.map((paper) => {
-      const card = document.createElement("article");
-      card.className = "paper-card";
-      card.dataset.kind = paper.kind;
-
-      const body = document.createElement("div");
-      const meta = document.createElement("div");
-      meta.className = "paper-meta";
-      meta.textContent = paper.kind === "published" ? "Publication" : "Working paper";
-
-      const title = document.createElement("h3");
-      title.className = "paper-title";
-      const titleLink = document.createElement("a");
-      titleLink.href = paper.url;
-      titleLink.textContent = paper.title;
-      applyExternalAttrs(titleLink);
-      title.append(titleLink);
-
-      const details = document.createElement("p");
-      details.className = "paper-details";
-      if (paper.journal) {
-        details.append(document.createTextNode(paper.detailPrefix || ""));
-        const journal = document.createElement("em");
-        journal.className = "journal-name";
-        journal.textContent = paper.journal;
-        details.append(journal, document.createTextNode(paper.detailSuffix || ""));
-      } else {
-        details.textContent = paper.details;
-      }
-
-      body.append(meta, title, details);
-
-      const links = document.createElement("div");
-      links.className = "paper-links";
-      const primary = document.createElement("a");
-      primary.href = paper.url;
-      primary.textContent = "Paper";
-      applyExternalAttrs(primary);
-      links.append(primary);
-
-      (paper.links || []).forEach((link) => {
-        const anchor = document.createElement("a");
-        anchor.href = link.url;
-        anchor.textContent = link.label;
-        applyExternalAttrs(anchor);
-        links.append(anchor);
-      });
-
-      card.append(body, links);
-      return card;
-    }),
-  );
+  list.replaceChildren(...visible.map(createPaperCard));
 }
 
 function renderTeaching() {
@@ -398,16 +404,6 @@ function renderTeaching() {
       return card;
     }),
   );
-}
-
-function initResearchFilters() {
-  document.querySelectorAll(".filter-tabs button").forEach((button) => {
-    button.addEventListener("click", () => {
-      document.querySelectorAll(".filter-tabs button").forEach((candidate) => candidate.classList.remove("active"));
-      button.classList.add("active");
-      renderPapers(button.dataset.filter);
-    });
-  });
 }
 
 function initMobileNav() {
@@ -450,6 +446,5 @@ function initActiveNav() {
 renderInsights();
 renderPapers();
 renderTeaching();
-initResearchFilters();
 initMobileNav();
 initActiveNav();

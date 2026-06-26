@@ -22,57 +22,29 @@
         <a href="index.html" data-page="cv">CV</a>
         <a href="research.html" data-page="research">Research</a>
         <a href="teaching.html" data-page="teaching">Teaching</a>
-        <a href="#contact">Contact</a>
       </nav>
     </header>
 
     <main>
-      <section class="section-wrap page-hero">
-        <p class="eyebrow">Research</p>
-        <h1>Publications and Papers</h1>
-        <p>
-          Work in applied microeconomic theory, industrial organization, information economics, and behavioral economics.
-        </p>
-      </section>
-
       <section class="section-wrap research-section" aria-labelledby="research-title">
-        <div class="section-heading split-heading">
-          <div>
-            <p class="eyebrow">Research</p>
-            <h2 id="research-title">Publications and Papers</h2>
-          </div>
-          <div class="filter-tabs" role="tablist" aria-label="Research filters">
-            <button type="button" class="active" data-filter="all">All</button>
-            <button type="button" data-filter="published">Publications</button>
-            <button type="button" data-filter="working">Working Papers</button>
-          </div>
-        </div>
-        <div id="research-list" class="research-list"></div>
-      </section>
-
-      <section class="section-wrap insights-section" aria-labelledby="insights-title">
         <div class="section-heading">
-          <p class="eyebrow">Articles</p>
-          <h2 id="insights-title">Yale Insights</h2>
+          <p class="eyebrow">Research</p>
+          <h2 id="research-title">Publications and Working Papers</h2>
         </div>
-        <div id="insights-list" class="insight-list"></div>
+        <div class="research-block">
+          <h3>Publications</h3>
+          <div id="publications-list" class="research-list"></div>
+        </div>
+        <div class="research-block">
+          <h3>Working Papers</h3>
+          <div id="working-papers-list" class="research-list"></div>
+        </div>
+        <div class="research-block">
+          <h3>Dormant Working Papers</h3>
+          <div id="dormant-papers-list" class="research-list"></div>
+        </div>
       </section>
     </main>
-
-    <footer id="contact" class="site-footer">
-      <div class="section-wrap footer-grid">
-        <div>
-          <h2>Jidong Zhou</h2>
-          <p>Professor of Economics, Yale School of Management</p>
-        </div>
-        <address>
-          165 Whitney Avenue, Evans Hall #3528<br />
-          New Haven, CT 06511<br />
-          <a href="tel:+12034328763">+1 203-432-8763</a><br />
-          <a href="mailto:jidong.zhou@yale.edu">jidong.zhou@yale.edu</a>
-        </address>
-      </div>
-    </footer>
 
     <script src="app.js"></script>
   </body>
